@@ -1,0 +1,8 @@
+.venv/
+data/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.DS_Store
+.taste-skill/
+site/__pycache__/

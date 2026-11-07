@@ -1,0 +1,23 @@
+[project]
+name = "isda"
+version = "0.1.0"
+description = "Python readers for ISRO science mission data (PDS4) from the ISSDC PRADAN archive"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["pds4_tools>=1.4", "pandas>=2"]
+
+[project.urls]
+Homepage = "https://madhavsomanath.github.io/Chandrayaan3-days/"
+Repository = "https://github.com/MadhavSomanath/Chandrayaan3-days"
+
+[project.optional-dependencies]
+test = ["pytest"]
+notebooks = ["matplotlib", "nbconvert", "ipykernel"]
+
+[project.scripts]
+isda = "isda.__main__:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
