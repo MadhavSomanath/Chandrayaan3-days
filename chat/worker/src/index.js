@@ -32,7 +32,8 @@ export default {
     if (request.method !== "POST") return json({ error: "Use POST" }, 405);
 
     const ip = request.headers.get("CF-Connecting-IP") || "local";
-    if (env.LIMITER && !(await env.LIMITER.limit({ key: ip })).success) {
+    if ((env.LIMITER && !(await env.LIMITER.limit({ key: ip })).success) ||
+        (env.SITE_LIMITER && !(await env.SITE_LIMITER.limit({ key: "site" })).success)) { // spoofed Origins + many IPs still hit a ceiling
       return json({ error: "Too many questions. Wait a minute and try again." }, 429);
     }
 

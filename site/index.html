@@ -996,6 +996,6 @@ function renderPlasma() {
   }
   // Day sources point at this page's own day links (#aug26), which select that day.
   const external = (url) => !url.startsWith(SITE);
-  const link = (url) => (external(url) ? url : url.slice(SITE.length) || "#");
+  const link = (url) => (external(url) ? (/^https:\/\//.test(url) ? url : "#") : url.slice(SITE.length) || "#"); // never a javascript: link
 })();
 </script>
