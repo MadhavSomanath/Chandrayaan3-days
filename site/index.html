@@ -912,9 +912,8 @@ function renderPlasma() {
 <script>
 /* ---------- ask the mission ---------- */
 (() => {
-  // The chat backend (chat/worker). Empty means the launcher stays hidden.
+  // The chat backend (chat/worker). While it's empty the panel still works, but every question gets a "not live yet" note.
   const CHAT_API = location.hostname === "localhost" ? "http://localhost:8787/chat" : "";
-  if (!CHAT_API) return;
   const SITE = "https://madhavsomanath.github.io/Chandrayaan3-days/";
   const LAUNCH_MS = 1060;  // 3 x 120ms rumble + 700ms lift-off
   const $a = (s) => document.querySelector(s);
@@ -954,10 +953,11 @@ function renderPlasma() {
     const launched = wait(still() ? 0 : LAUNCH_MS).then(() => { if (busy) phase("cruising"); });
     let data, failed = false;
     try {
+      if (!CHAT_API) throw new Error("offline");
       const r = await fetch(CHAT_API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question }) });
       data = await r.json().catch(() => ({}));
       if (!r.ok) { failed = true; data = { error: data.error || "Something went wrong. Try again." }; }
-    } catch { failed = true; data = { error: "The chat can't be reached right now. Check your connection and try again." }; }
+    } catch { failed = true; data = { error: CHAT_API ? "The chat can't be reached right now. Check your connection and try again." : "The chat isn't live yet, so it can't answer questions. Everything it would draw on is on this page." }; }
     await launched;  // never land before the rocket has left
     busy = false; send.disabled = false;
     phase("landing");
@@ -967,8 +967,8 @@ function renderPlasma() {
   }
 
   function errorBlock(msg, question) {
-    return el("div", { className: "a error" }, [el("p", { className: "text", textContent: msg }),
-      el("button", { className: "btn retry", type: "button", textContent: "Try again", onclick: (e) => { e.currentTarget.parentElement.remove(); log.lastElementChild?.remove(); ask(question); } })]);
+    return el("div", { className: "a error" }, [el("p", { className: "text", textContent: msg }), ...!CHAT_API ? [] : [
+      el("button", { className: "btn retry", type: "button", textContent: "Try again", onclick: (e) => { e.currentTarget.parentElement.remove(); log.lastElementChild?.remove(); ask(question); } })]]);
   }
 
   function answerBlock({ segments = [], sources = [], declined }) {
