@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- the chat launcher as an icon: the gold Sun, the lunar ground rising over it, an LVM3 silhouette -->
+  <clipPath id="c"><circle cx="32" cy="32" r="32"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect width="64" height="64" fill="#e2a62b"/>
+    <ellipse cx="32" cy="75.5" rx="38.4" ry="25.6" fill="#0b1b3f"/>
+  </g>
+  <svg x="23" y="5" width="18" height="44" viewBox="0 0 26 64" fill="#0b1b3f">
+    <path d="M10 14 Q13 2 16 14 L16 50 L10 50 Z"/>
+    <path d="M4 26 Q6 20 8 26 L8 50 L4 50 Z M18 26 Q20 20 22 26 L22 50 L18 50 Z" opacity=".75"/>
+  </svg>
+</svg>
