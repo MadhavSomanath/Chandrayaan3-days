@@ -75,7 +75,8 @@ button { font: inherit; color: inherit; }
 .hero-art .disc img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: 0; transition: opacity 1.6s ease; }
 .hero-art .disc img.on { opacity: 1; }
 .hero-art .sun { position: absolute; width: clamp(56px, 7vw, 104px); aspect-ratio: 1; border-radius: 50%; background: var(--accent); left: 8%; top: 9%; }
-.hero-art figcaption { position: absolute; left: 24px; bottom: 20px; right: 24px; color: var(--on-ink); font-size: var(--step-small); max-width: 34ch; }
+.hero-art figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 24px 18px; min-height: calc(2lh + 34px); background: #1b2b52; color: var(--on-ink); font-size: var(--step-small); transition: opacity .4s var(--ease); }
+.hero-art figcaption.swap { opacity: 0; }
 
 /* ---------- day picker: the Sun's path ---------- */
 .picker { background: var(--ink); color: var(--on-ink); margin-top: 12px; overflow: hidden; touch-action: pan-y; }
@@ -87,13 +88,25 @@ button { font: inherit; color: inherit; }
 .readout .facts { color: var(--on-ink-soft); font-size: var(--step-lead); margin-top: 10px; }
 .round.big { width: clamp(56px, 7vw, 88px); height: clamp(56px, 7vw, 88px); }
 .round.big svg { width: 40%; height: 40%; }
-.arc { position: relative; height: clamp(220px, 30vw, 420px); margin-top: 12px; }
+.arc { --sun: clamp(34px, 4.4vw, 60px); --dot: clamp(10px, 1vw, 14px); position: relative; height: clamp(240px, 30vw, 420px); margin-top: 12px; user-select: none; -webkit-user-select: none; }
 .arc .ground { position: absolute; left: calc(-1 * var(--gutter)); right: calc(-1 * var(--gutter)); bottom: 0; height: 22%; background: #1b2b52; }
-.arc .day { position: absolute; translate: -50% 50%; width: clamp(30px, 4.2vw, 56px); aspect-ratio: 1; border-radius: 50%; border: 0; padding: 0; cursor: pointer; background: #31446f; transition: transform .25s var(--ease), background-color .25s; display: grid; place-items: center; }
-.arc .day:hover { transform: scale(1.15); background: #4a5f8f; }
-.arc .day[aria-pressed="true"] { background: var(--accent); transform: scale(1.7); }
-.arc .day span { position: absolute; top: calc(100% + 10px); font-size: var(--step-small); color: var(--on-ink-soft); white-space: nowrap; }
-.arc .day[aria-pressed="true"] span { color: var(--on-ink); top: calc(100% + 4px); font-size: 8px; font-weight: 500; }
+.arc svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.arc .track { fill: none; stroke: #3d5182; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1 8; }
+.arc .trail { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; }
+.arc .sunmark { position: absolute; left: 0; top: 0; width: var(--sun); aspect-ratio: 1; border-radius: 50%; background: var(--accent); offset-rotate: 0deg; offset-anchor: center; pointer-events: none; }
+.arc.ready .trail { transition: stroke-dashoffset .7s var(--ease); }
+.arc.ready .sunmark { transition: offset-distance .7s var(--ease); }
+.arc.scrub .trail { transition-duration: .2s; } .arc.scrub .sunmark { transition-duration: .2s; }
+.arc .day { position: absolute; translate: -50% 50%; width: 44px; height: 56px; border: 0; padding: 0; background: none; cursor: pointer; }
+.arc .day::before { content: ""; position: absolute; left: 50%; top: 50%; width: var(--dot); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; background: #3d5182; transition: background-color .3s, scale .25s var(--ease); }
+.arc .day.past::before { background: var(--on-ink-soft); }
+.arc .day[aria-pressed="true"]::before { scale: 0; }
+@media (hover: hover) { .arc .day:hover::before { scale: 1.5; } }
+.arc .day:focus-visible { outline: none; }
+.arc .day:focus-visible::before { outline: 2px solid var(--on-ink); outline-offset: 4px; }
+.arc .day[aria-pressed="true"]:focus-visible::before { scale: 1; background: transparent; width: var(--sun); outline-offset: 2px; }
+.arc .day span { position: absolute; left: 50%; translate: -50% 0; top: calc(50% + var(--dot) / 2 + 10px); font-size: var(--step-small); color: var(--on-ink-soft); white-space: nowrap; transition: top .3s var(--ease); }
+.arc .day[aria-pressed="true"] span { top: calc(50% + var(--sun) / 2 + 8px); color: var(--on-ink); font-weight: 500; }
 .arc .elev { position: absolute; left: 0; top: 0; font-size: var(--step-small); color: var(--on-ink-soft); max-width: 30ch; }
 .arc .horizon { position: absolute; left: 50%; translate: -50% 0; bottom: calc(11% - 0.7em); font-size: var(--step-small); color: var(--on-ink-soft); }
 
@@ -163,6 +176,7 @@ table.signals .play[aria-pressed="true"] { background: var(--accent); color: var
 .pair div { background: var(--ink); color: var(--on-ink); padding: 22px; display: grid; gap: 6px; }
 .pair b { font-family: var(--display); font-weight: 300; font-size: var(--step-head); line-height: 1; }
 .pair span { color: var(--on-ink-soft); font-size: var(--step-small); }
+#plasma { display: grid; gap: 18px; }
 
 /* ---------- mission in four parts ---------- */
 .stages { padding-block: clamp(120px, 14vw, 220px) 0; }
@@ -208,7 +222,7 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
 .mark button { border: 0; padding: 0; border-radius: 50%; background: var(--ink); cursor: pointer; transition: background-color .2s, transform .2s var(--ease); }
 .mark button:hover, .mark button[aria-pressed="true"] { background: var(--accent); }
 .mark-label { display: flex; justify-content: space-between; gap: 4px; margin-top: 8px; font-size: var(--step-small); color: var(--muted); }
-.mark-label span { text-align: center; }
+.mark-label span { display: flex; justify-content: center; white-space: nowrap; }
 .foot { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 28px; margin-top: 56px; font-size: var(--step-small); color: var(--muted); }
 .foot > div { grid-column: span 4; display: grid; gap: 8px; align-content: start; }
 .foot h3 { font-family: var(--text); font-weight: 500; font-size: var(--step-body); color: var(--ink); letter-spacing: 0; }
@@ -223,7 +237,7 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
 @media (max-width: 900px) {
   .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .hero-art { order: -1; min-height: 48svh; }
-  .hero-card { margin-top: -24px; position: relative; margin-inline: 12px; }
+  .hero-card { position: relative; }
   .chapter .wrap, .chapter.flip .wrap { grid-template-columns: minmax(0, 1fr); }
   .chapter.flip .words { order: 0; }
   .words { position: static; }
@@ -249,12 +263,21 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
   table.signals td.shape { width: 34%; }
   table.signals th.kind-h, table.signals td.kind { display: none; }
   table.signals td.shape svg { border-left: 4px solid var(--k); padding-left: 4px; }
-  .arc .day span { display: none; }
-  .readout { grid-template-columns: minmax(0, 1fr) auto auto; }
-  .readout .prev { order: 2; } .readout .next { order: 3; }
+  .arc .day { width: 26px; }
+  .pair div { padding: 16px; }
+  .pair b { font-size: 1.75rem; white-space: nowrap; }
+  .mark { height: 72px; min-height: 0; }
+  .mark-label span:nth-child(even) { visibility: hidden; }
+  .ask-launcher.tucked { transform: translateY(calc(100% + 40px)); }
+  .arc .day:not([aria-pressed="true"]) span { display: none; }
+  .readout { grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px 10px; }
+  .readout > div { display: contents; }
+  .readout .date { grid-area: 1 / 1; font-size: clamp(1.75rem, 8.5vw, 2.75rem); white-space: nowrap; }
+  .readout .prev { grid-area: 1 / 2; } .readout .next { grid-area: 1 / 3; }
+  .readout .facts { grid-column: 1 / -1; margin-top: 0; }
+  .round.big { width: 48px; height: 48px; }
   .tile { padding: 20px; }
   .tile.t2, .tile.t3 { grid-column: 1 / -1; grid-row: auto; min-height: 40vw; margin-top: 0; }
-  .arc .day { width: 22px; }
 }
 @media (min-width: 901px) { .bar4 button small { display: none; } }
 @media (prefers-reduced-motion: reduce) {
@@ -370,7 +393,7 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
   <div class="wrap">
     <div class="rise">
       <h2 id="picker-h">Pick a day</h2>
-      <p class="intro">Each circle is one day, set at the height the Sun reached above Shiv Shakti. Near the pole it never climbed higher than 19°, so the whole mission ran from mid-morning to late afternoon of a single lunar day.</p>
+      <p class="intro">Each dot on the Sun's path is one day, set at the height the Sun reached above Shiv Shakti. Near the pole it never climbed higher than 19°, so the whole mission ran from mid-morning to late afternoon of a single lunar day.</p>
     </div>
     <div class="readout rise" data-ui>
       <button class="round big prev" id="prev" aria-label="Previous day"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13 3 L6 10 L13 17" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -379,7 +402,7 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
     </div>
     <div class="arc" id="arc" data-ui role="group" aria-label="Days of the mission">
       <div class="ground"></div>
-      <p class="elev">Higher circle, higher Sun</p>
+      <p class="elev">Higher on the path, higher Sun. Tap or drag along it.</p>
       <p class="horizon">horizon</p>
     </div>
   </div>
@@ -615,7 +638,7 @@ const audio = {};
   const imgs = [...document.querySelectorAll("#disc img")], caps = ["A model of Vikram, with the Pragyan rover on its ramp.", "The landing site from orbit. The box marks Vikram.", "Lunar soil holds a print like wet sand."];
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   let i = 0;
-  setInterval(() => { if (document.hidden) return; imgs[i].classList.remove("on"); i = (i + 1) % imgs.length; imgs[i].classList.add("on"); $("#disc-cap").textContent = caps[i]; }, 6500);
+  setInterval(() => { if (document.hidden) return; imgs[i].classList.remove("on"); i = (i + 1) % imgs.length; imgs[i].classList.add("on"); const cap = $("#disc-cap"), next = caps[i]; cap.classList.add("swap"); setTimeout(() => { cap.textContent = next; cap.classList.remove("swap"); }, 400); }, 6500);
 })();
 
 /* entrances: elements start visible; only those below the fold wait for their first appearance */
@@ -655,7 +678,7 @@ addEventListener("keydown", (e) => {
 });
 for (const el of [$("#picker"), $("#daybar")]) {  // swipe left or right to change day
   let x0 = null, y0 = 0;
-  el.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") { x0 = e.clientX; y0 = e.clientY; } });
+  el.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse" && !e.target.closest("#arc")) { x0 = e.clientX; y0 = e.clientY; } });
   el.addEventListener("pointerup", (e) => { if (x0 == null) return; const dx = e.clientX - x0, dy = e.clientY - y0; x0 = null; if (Math.abs(dx) > 60 && Math.abs(dx) > 2 * Math.abs(dy)) step(dx < 0 ? 1 : -1); });
 }
 $("#start").addEventListener("click", () => select("2023-08-23"));
@@ -684,23 +707,54 @@ function render() {
   for (const id of ["#prev", "#bprev"]) $(id).disabled = i === 0;
   for (const id of ["#next", "#bnext"]) $(id).disabled = i === DAYS.length - 1;
   document.querySelectorAll("[data-day]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.day === k));
+  drawArc();
   stopPlaying();
   renderSignals(); drawTape(); renderProfile(); renderStops(); renderPlasma();
 }
 
 /* ---------- the Sun's path ---------- */
+// each day sits at x% across and y% up the arc box; the path, the marks and the Sun share these numbers
+const ARC_XY = [];
 function buildArc() {
   const arc = $("#arc"), max = 20;
+  arc.insertAdjacentHTML("beforeend", '<svg aria-hidden="true"><path class="track"/><path class="trail"/></svg><div class="sunmark" aria-hidden="true"></div>');
   DAYS.forEach((k, i) => {
     const b = document.createElement("button"), sun = sunAt(Date.parse(k + "T12:00:00Z"));
+    ARC_XY.push([4 + i / (DAYS.length - 1) * 92, 22 + Math.max(sun, 0) / max * 66]);
     b.className = "day"; b.dataset.day = k;
-    b.style.left = (4 + i / (DAYS.length - 1) * 92) + "%";
-    b.style.bottom = (22 + Math.max(sun, 0) / max * 66) + "%";
+    b.style.left = ARC_XY[i][0] + "%";
+    b.style.bottom = ARC_XY[i][1] + "%";
     b.setAttribute("aria-label", `${fmt(k, { day: "numeric", month: "long" })}, Sun ${sun.toFixed(0)} degrees up`);
     b.innerHTML = `<span>${fmt(k, { day: "numeric", month: "short" })}</span>`;
     b.addEventListener("click", () => select(k));
     arc.appendChild(b);
   });
+  // drag along the arc to move the Sun day by day
+  const nearest = (e) => { const r = arc.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 100; return DAYS[ARC_XY.reduce((best, p, i) => Math.abs(p[0] - x) < Math.abs(ARC_XY[best][0] - x) ? i : best, 0)]; };
+  // touch selects on a tap or a sideways drag, so a vertical scroll that starts here never moves the Sun
+  let x0 = null;
+  const pick = (e) => { const k = nearest(e); if (k !== selected) select(k); };
+  const end = () => { x0 = null; arc.classList.remove("scrub"); };
+  arc.addEventListener("pointerdown", (e) => { if (e.button) return; x0 = e.clientX; arc.setPointerCapture(e.pointerId); arc.classList.add("scrub"); if (e.pointerType === "mouse") pick(e); });
+  arc.addEventListener("pointermove", (e) => { if (x0 != null && Math.abs(e.clientX - x0) > 8) pick(e); });
+  arc.addEventListener("pointerup", (e) => { if (x0 != null) pick(e); end(); });
+  arc.addEventListener("pointercancel", end);
+}
+function drawArc() {
+  const arc = $("#arc"), { width: W, height: H } = arc.getBoundingClientRect(), i = DAYS.indexOf(selected);
+  const p = ARC_XY.map(([x, y]) => [+(x / 100 * W).toFixed(1), +((1 - y / 100) * H).toFixed(1)]);
+  // Catmull-Rom through the days, as cubic Bezier segments
+  const segs = p.slice(1).map((q, j) => { const a = p[j - 1] || p[j], b = p[j], c = p[j + 2] || q;
+    return `C${(b[0] + (q[0] - a[0]) / 6).toFixed(1)},${(b[1] + (q[1] - a[1]) / 6).toFixed(1)} ${(q[0] - (c[0] - b[0]) / 6).toFixed(1)},${(q[1] - (c[1] - b[1]) / 6).toFixed(1)} ${q}`; });
+  const d = `M${p[0]}` + segs.join(""), track = arc.querySelector(".track"), trail = arc.querySelector(".trail");
+  track.setAttribute("d", d); trail.setAttribute("d", d);
+  let done = 0; segs.slice(0, i).forEach((s, j) => { track.setAttribute("d", `M${p[j]}${s}`); done += track.getTotalLength(); });
+  track.setAttribute("d", d);
+  const total = track.getTotalLength();
+  trail.style.strokeDasharray = `${total} ${total}`; trail.style.strokeDashoffset = total - done;
+  const sun = arc.querySelector(".sunmark"); sun.style.offsetPath = `path("${d}")`; sun.style.offsetDistance = done + "px";
+  arc.querySelectorAll(".day").forEach((b, j) => b.classList.toggle("past", j < i));
+  if (!arc.classList.contains("ready")) requestAnimationFrame(() => requestAnimationFrame(() => arc.classList.add("ready")));
 }
 function buildDots() {
   $("#dots").innerHTML = DAYS.map((k) => `<button data-day="${k}" aria-label="${fmt(k, { day: "numeric", month: "long" })}" title="${fmt(k, { day: "numeric", month: "short" })}"></button>`).join("");
@@ -900,7 +954,7 @@ function renderPlasma() {
     svgEl("text", { x: L, y: 14, fill: css("--ink") }, svg).textContent = label;
     const mid = key === "te_k" ? 10000 : 500;
     svgEl("rect", { x: L, y: y(mid), width: W - L - R, height: 1, fill: "#c3bfb5" }, svg);
-    svgEl("text", { x: W - R, y: y(mid) - 5, "text-anchor": "end" }, svg).textContent = f(mid);
+    svgEl("text", { x: W - R, y: 14, "text-anchor": "end", fill: css("--muted") }, svg).textContent = "line: " + f(mid);
     let d = "", prev = null;
     P.t.forEach((t, i) => { const gap = prev != null && t - prev > 6 * 36e5; d += `${d && !gap ? "L" : "M"}${x(t).toFixed(1)},${y(vals[i]).toFixed(1)}`; prev = t; });
     svgEl("path", { d, fill: "none", stroke: css("--ink"), "stroke-width": 2, "stroke-linejoin": "round" }, svg);
@@ -923,6 +977,8 @@ function renderPlasma() {
   let busy = false;
 
   opener.hidden = false;
+  let lastY = scrollY;
+  addEventListener("scroll", () => { const dy = scrollY - lastY; if (Math.abs(dy) < 8) return; opener.classList.toggle("tucked", dy > 0 && scrollY > 240); lastY = scrollY; }, { passive: true });
   const open = () => { panel.hidden = false; opener.setAttribute("aria-expanded", "true"); refreshChips(); input.focus(); };
   const close = () => { panel.hidden = true; opener.setAttribute("aria-expanded", "false"); opener.focus(); };
   opener.addEventListener("click", open);
