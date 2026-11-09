@@ -261,6 +261,87 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
   *, *::before, *::after { transition-duration: 0s !important; animation: none !important; }
   .js .rise.wait { opacity: 1; translate: none; }
 }
+
+/* ---------- ask the mission: chat launcher and panel ----------
+   Motion thesis: a question launches the LVM3 (120ms rumble x3, 700ms accelerating lift-off), the
+   rocket coasts the low-Sun arc while the answer loads (2.8s loop), then lands in 420ms with a dust
+   puff and the answer rises in. At rest the gold Sun drifts over the Shiv Shakti horizon (40s). */
+:root { --launch: cubic-bezier(.6, 0, .9, .4); --ground: #1b2b52; }
+.ask-launcher { position: fixed; z-index: 30; right: max(20px, env(safe-area-inset-right, 0px)); bottom: max(20px, env(safe-area-inset-bottom, 0px)); width: 64px; height: 64px; border-radius: 50%; border: 0; padding: 0; background: var(--accent); cursor: pointer; overflow: hidden; display: grid; place-items: center; transition: transform .18s var(--ease), opacity .18s var(--ease); }
+.ask-launcher::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -58%; height: 80%; border-radius: 50%; background: var(--ink); }
+.ask-launcher svg { position: relative; z-index: 1; width: 18px; height: 44px; translate: 0 -5px; transition: translate .18s var(--ease); }
+@media (hover: hover) and (pointer: fine) { .ask-launcher:hover svg { translate: 0 -8px; } }
+.ask-launcher:active { transform: scale(.95); }
+.ask-launcher[aria-expanded="true"] { opacity: 0; pointer-events: none; transform: scale(.9); }
+
+.ask { position: fixed; z-index: 31; right: max(20px, env(safe-area-inset-right, 0px)); bottom: max(20px, env(safe-area-inset-bottom, 0px)); width: min(440px, calc(100vw - 40px)); height: min(680px, calc(100svh - 40px)); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: var(--bg); color: var(--ink); box-shadow: 0 18px 48px -12px rgb(11 27 63 / .45); transform-origin: 100% 100%; transition: opacity 260ms var(--ease), transform 260ms var(--ease), display 260ms allow-discrete; }
+@starting-style { .ask { opacity: 0; transform: scale(.92); } }
+.ask[hidden] { display: none; opacity: 0; transform: scale(.92); transition-duration: 180ms; }
+
+/* the stage: the panel's header is a slice of the day picker's sky */
+.ask-stage { position: relative; height: 168px; background: var(--ink); color: var(--on-ink); overflow: hidden; }
+.ask-stage .ground { position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: var(--ground); }
+.ask-stage h2 { position: absolute; left: 20px; top: 16px; font-size: 1.75rem; }
+.ask-stage .status { position: absolute; left: 20px; top: 54px; font-size: var(--step-small); color: var(--on-ink-soft); max-width: 24ch; }
+.ask-stage .close { position: absolute; right: 12px; top: 12px; width: 44px; height: 44px; }
+.ask-stage .close svg { width: 16px; height: 16px; }
+.arm { position: absolute; left: 50%; bottom: -150%; width: 0; height: 208%; transform-origin: 50% 100%; pointer-events: none; }
+.arm > * { position: absolute; left: 0; top: 0; translate: -50% -50%; }
+.sun-arm { rotate: 10deg; animation: ask-drift 40s linear infinite alternate; }  /* right of the title, never behind text */
+.sun-arm i { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); }
+@keyframes ask-drift { to { rotate: 34deg; } }
+.rocket { position: absolute; left: 50%; bottom: 22%; width: 18px; height: 44px; margin-left: -9px; overflow: visible; }
+.rocket .flame { transform-origin: 13px 50px; transform: scaleY(0); }
+.coast-arm { opacity: 0; rotate: -38deg; }
+.coast-arm svg { width: 18px; height: 44px; rotate: 90deg; }
+.dust { position: absolute; left: 50%; bottom: 22%; }
+.dust i { position: absolute; width: 9px; height: 9px; margin: 0 0 -4px -4px; bottom: 0; border-radius: 50%; background: #9aa3b5; opacity: 0; }
+
+.ask.launching .rocket { animation: ask-rumble 120ms linear 3, ask-lift 700ms var(--launch) 360ms forwards; }
+.ask.launching .rocket .flame, .ask.cruising .flame { animation: ask-ignite 120ms var(--ease) forwards; }
+.ask.cruising .rocket { opacity: 0; }
+.ask.cruising .coast-arm { opacity: 1; animation: ask-coast 2.8s linear infinite; }
+.ask.landing .rocket { animation: ask-land 420ms var(--ease); }
+.ask.landing .dust i { animation: ask-puff 360ms var(--ease) 380ms; }
+@keyframes ask-rumble { 25% { translate: -1px 0; } 75% { translate: 1px 0; } }
+@keyframes ask-lift { to { transform: translateY(-200px); } }
+@keyframes ask-ignite { to { transform: scaleY(1); } }
+@keyframes ask-coast { from { rotate: -38deg; } to { rotate: 38deg; } }
+@keyframes ask-land { from { transform: translateY(-140px); } }
+@keyframes ask-puff { from { opacity: .9; transform: scale(.4); } to { opacity: 0; transform: translate(var(--dx), -6px) scale(1); } }
+
+/* the conversation */
+.ask-log { overflow-y: auto; overscroll-behavior: contain; padding: 20px; display: grid; gap: 18px; align-content: start; font-size: 1rem; scrollbar-color: #b3afa5 transparent; }
+.ask-log p { max-width: none; }
+.ask-intro { display: grid; gap: 14px; }
+.ask-intro .small { color: var(--muted); }
+.ask-chips { display: grid; gap: 8px; justify-items: start; }
+.ask-chips button { min-height: 44px; padding: 8px 16px; border: 0; border-radius: 22px; background: var(--surface); text-align: left; cursor: pointer; line-height: 1.35; transition: background-color .15s var(--ease); }
+.ask-chips button:hover { background: #c6c2b8; }
+.q { justify-self: end; max-width: 85%; background: var(--ink); color: var(--on-ink); padding: 10px 16px; border-radius: 22px; }
+.a { display: grid; gap: 12px; animation: ask-rise 400ms var(--ease) both; }
+.a .text { white-space: pre-line; }
+.a.declined .text, .a.error .text { background: var(--surface); padding: 14px 16px; }
+@keyframes ask-rise { from { opacity: 0; transform: translateY(24px); } }
+.cite { display: inline-grid; place-items: center; min-width: 1.5em; height: 1.5em; margin: 0 1px 0 3px; padding: 0 4px; border-radius: 999px; background: var(--accent); color: var(--ink); font-size: .72em; font-weight: 500; line-height: 1; vertical-align: .25em; text-decoration: none; }
+.sources { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: var(--step-small); color: var(--muted); }
+.sources li { display: grid; grid-template-columns: 1.6em minmax(0, 1fr); gap: 6px; }
+.sources b { font-weight: 500; color: var(--ink); }
+.retry { justify-self: start; min-height: 44px; padding: 0 1.2em; font-size: 1rem; }
+.ask-form { display: flex; gap: 8px; padding: 12px 12px max(12px, env(safe-area-inset-bottom, 0px)) 20px; background: var(--surface); align-items: center; }
+.ask-form input { flex: 1; min-width: 0; min-height: 48px; padding: 0 16px; border: 0; border-radius: 24px; background: var(--bg); color: var(--ink); font: inherit; font-size: max(16px, 1rem); caret-color: var(--accent); }
+.ask-form input::placeholder { color: var(--muted); }
+.ask-form .round { width: 48px; height: 48px; }
+.ask ::selection { background: var(--accent); color: var(--ink); }
+
+@media (max-width: 640px) {
+  .ask { right: 0; left: 0; bottom: 0; width: 100%; height: 88svh; transform-origin: 50% 100%; }
+  .ask-stage { height: 136px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ask.launching .rocket, .ask.cruising .rocket { opacity: .4; }
+  .coast-arm, .dust { display: none; }
+}
 </style>
 
 <header class="wrap hero">
@@ -458,6 +539,36 @@ footer h2 { font-size: clamp(1.75rem, 1rem + 1.6vw, 2.25rem); margin-bottom: 28p
   </div>
 </footer>
 <div id="tip" hidden></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lvm3" viewBox="0 0 26 64"><path d="M10 14 Q13 2 16 14 L16 50 L10 50 Z"/><path d="M4 26 Q6 20 8 26 L8 50 L4 50 Z M18 26 Q20 20 22 26 L22 50 L18 50 Z" opacity=".75"/></symbol>
+</svg>
+<button class="ask-launcher" id="ask-open" aria-label="Ask about the mission" aria-expanded="false" aria-controls="ask" hidden>
+  <svg viewBox="0 0 26 64" aria-hidden="true" style="fill:var(--ink)"><use href="#lvm3"/></svg>
+</button>
+<section class="ask" id="ask" role="dialog" aria-labelledby="ask-h" hidden>
+  <div class="ask-stage">
+    <div class="arm sun-arm" aria-hidden="true"><i></i></div>
+    <div class="ground"></div>
+    <h2 id="ask-h">Ask the mission</h2>
+    <p class="status" id="ask-status" aria-hidden="true">Answers come only from this project's data</p>
+    <svg class="rocket" viewBox="0 0 26 64" aria-hidden="true"><g class="flame"><path d="M8 50 L13 64 L18 50 Z" style="fill:var(--accent)"/></g><use href="#lvm3" style="fill:var(--on-ink)"/></svg>
+    <div class="arm coast-arm" aria-hidden="true"><svg viewBox="0 0 26 64"><path class="flame" d="M8 50 L13 64 L18 50 Z" style="fill:var(--accent)"/><use href="#lvm3" style="fill:var(--on-ink)"/></svg></div>
+    <div class="dust" aria-hidden="true"><i style="--dx:-14px"></i><i style="--dx:0px"></i><i style="--dx:14px"></i></div>
+    <button class="round close" id="ask-close" aria-label="Close"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="ask-log" id="ask-log" aria-live="polite">
+    <div class="ask-intro">
+      <p>Ask anything about Chandrayaan-3's twelve days at Shiv Shakti: moonquakes, soil temperature, soil chemistry or the plasma above the ground.</p>
+      <div class="ask-chips" id="ask-chips"></div>
+      <p class="small">Answers use only this project's data and notes, and link to their sources. Questions are sent to Claude, Anthropic's AI, to write the answer.</p>
+    </div>
+  </div>
+  <form class="ask-form" id="ask-form">
+    <input id="ask-q" name="q" autocomplete="off" maxlength="400" required minlength="3" placeholder="Ask a question" aria-label="Your question">
+    <button class="round" id="ask-send" aria-label="Send question"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16 L10 4 M4 10 L10 4 L16 10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </form>
+</section>
 
 <script>
 document.documentElement.classList.add("js");
@@ -797,4 +908,94 @@ function renderPlasma() {
     box.appendChild(svg);
   }
 }
+</script>
+<script>
+/* ---------- ask the mission ---------- */
+(() => {
+  // The chat backend (chat/worker). Empty means the launcher stays hidden.
+  const CHAT_API = location.hostname === "localhost" ? "http://localhost:8787/chat" : "";
+  if (!CHAT_API) return;
+  const SITE = "https://madhavsomanath.github.io/Chandrayaan3-days/";
+  const LAUNCH_MS = 1060;  // 3 x 120ms rumble + 700ms lift-off
+  const $a = (s) => document.querySelector(s);
+  const el = (tag, props = {}, kids = []) => { const e = Object.assign(document.createElement(tag), props); e.append(...kids); return e; };
+  const still = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const panel = $a("#ask"), opener = $a("#ask-open"), log = $a("#ask-log"), input = $a("#ask-q"), send = $a("#ask-send"), status = $a("#ask-status");
+  let busy = false;
+
+  opener.hidden = false;
+  const open = () => { panel.hidden = false; opener.setAttribute("aria-expanded", "true"); refreshChips(); input.focus(); };
+  const close = () => { panel.hidden = true; opener.setAttribute("aria-expanded", "false"); opener.focus(); };
+  opener.addEventListener("click", open);
+  $a("#ask-close").addEventListener("click", close);
+  panel.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+
+  function refreshChips() {  // the day the visitor is looking at becomes one of the suggestions
+    const day = typeof selected === "string" ? new Date(selected + "T12:00:00Z").toLocaleDateString("en-GB", { timeZone: "UTC", day: "numeric", month: "long" }) : "26 August";
+    $a("#ask-chips").replaceChildren(...[`What happened on ${day}?`, "How hot did the soil get?", "Is the soil the same at every rover stop?"]
+      .map((q) => el("button", { type: "button", textContent: q, onclick: () => ask(q) })));
+  }
+
+  $a("#ask-form").addEventListener("submit", (e) => { e.preventDefault(); ask(input.value); });
+
+  // Rocket choreography: launch, coast while waiting, land when the answer is in.
+  const phase = (p) => { panel.classList.remove("launching", "cruising", "landing"); if (p && !still()) { void panel.offsetWidth; panel.classList.add(p); } };
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  async function ask(raw) {
+    const question = raw.trim();
+    if (busy || question.length < 3) return;
+    busy = true; send.disabled = true; input.value = "";
+    log.querySelector(".ask-intro")?.remove();
+    log.append(el("p", { className: "q", textContent: question }));
+    log.scrollTop = log.scrollHeight;
+    status.textContent = "Searching the mission data…";
+    phase("launching");
+    const launched = wait(still() ? 0 : LAUNCH_MS).then(() => { if (busy) phase("cruising"); });
+    let data, failed = false;
+    try {
+      const r = await fetch(CHAT_API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question }) });
+      data = await r.json().catch(() => ({}));
+      if (!r.ok) { failed = true; data = { error: data.error || "Something went wrong. Try again." }; }
+    } catch { failed = true; data = { error: "The chat can't be reached right now. Check your connection and try again." }; }
+    await launched;  // never land before the rocket has left
+    busy = false; send.disabled = false;
+    phase("landing");
+    status.textContent = failed ? "No answer this time" : data.declined ? "Outside this project's data" : "Answer from the mission data";
+    log.append(failed ? errorBlock(data.error, question) : answerBlock(data));
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function errorBlock(msg, question) {
+    return el("div", { className: "a error" }, [el("p", { className: "text", textContent: msg }),
+      el("button", { className: "btn retry", type: "button", textContent: "Try again", onclick: (e) => { e.currentTarget.parentElement.remove(); log.lastElementChild?.remove(); ask(question); } })]);
+  }
+
+  function answerBlock({ segments = [], sources = [], declined }) {
+    // Number only the sources the answer cites, in order of first use.
+    const order = [];
+    for (const s of segments) for (const c of s.cites) if (!order.includes(c.doc)) order.push(c.doc);
+    const text = el("p", { className: "text" });
+    for (const s of segments) {
+      text.append(s.text);
+      for (const d of [...new Set(s.cites.map((c) => c.doc))]) {
+        const n = order.indexOf(d) + 1, src = sources[d];
+        text.append(el("a", { className: "cite", href: link(src.url), textContent: n, title: src.title, ...(external(src.url) && { target: "_blank", rel: "noopener" }) }));
+      }
+    }
+    const block = el("div", { className: "a" + (declined ? " declined" : "") }, [text]);
+    if (order.length) {
+      block.append(el("ol", { className: "sources", "aria-label": "Sources" }, order.map((d, i) => {
+        const s = sources[d], name = s.title.replace(/^Explorer page: /, "This page: ");
+        return el("li", {}, [el("span", { textContent: i + 1 + "." }), external(s.url) || link(s.url) !== "#"
+          ? el("a", { href: link(s.url), textContent: name, ...(external(s.url) && { target: "_blank", rel: "noopener" }) })
+          : el("b", { textContent: name })]);
+      })));
+    }
+    return block;
+  }
+  // Day sources point at this page's own day links (#aug26), which select that day.
+  const external = (url) => !url.startsWith(SITE);
+  const link = (url) => (external(url) ? url : url.slice(SITE.length) || "#");
+})();
 </script>
