@@ -156,6 +156,10 @@ cd notebooks && ../.venv/bin/jupyter nbconvert --to notebook --execute --inplace
 
 Fork the repository, then in its **Settings → Pages** set **Source** to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` publishes `site/` on every push to `main`. `index.html` has no `<!doctype>`/`<html>` wrapper because it's also published as a claude.ai artifact; the workflow adds one.
 
+### 8. Optional: the "Ask the mission" chatbot
+
+The explorer has a chatbot that answers questions from this project's own data, with citations. It runs on a small Cloudflare Worker that keeps the Claude API key off the page. [chat/README.md](chat/README.md) covers running it locally and putting it online.
+
 ## Results
 
 | Notebook | Reproduces | Result |

@@ -1,0 +1,443 @@
+[
+{
+"id": 0,
+"title": "Explorer page: Twelve days on the Moon",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "In August 2023 India's Chandrayaan-3 landed near the Moon's south pole. Step through its mission one day at a time: what the ground felt, how hot the soil got and what it is made of. Start at the landing Shiv Shakti point, 69.37° S 32.32° E A model of Vikram, with the Pragyan rover on its ramp."
+},
+{
+"id": 1,
+"title": "Explorer page: Pick a day",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Each circle is one day, set at the height the Sun reached above Shiv Shakti. Near the pole it never climbed higher than 19°, so the whole mission ran from mid-morning to late afternoon of a single lunar day. 26 August Higher circle, higher Sun horizon"
+},
+{
+"id": 2,
+"title": "Explorer page: Did the ground shake?",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "ILSA, a seismometer on the lander, can feel a millionth of Earth's gravity: a micro-g, written µg. Its team listed every signal it picked up and, where they could, the cause: the rover driving, an instrument at work, or nothing they could find. Apollo 16's instruments in 1972. Apollo's seismometers listened to the Moon until 1977; ILSA is the first at its south pole. Time (UTC) Cause Shaking over 2½ minutes Peak Listen Each row is one signal. The line traces how hard the ground shook, from 30 seconds before the listed start to two minutes after. Press play to hear it, sped up 60 times so it falls in the range of your ears. The whole mission. Each stem is one signal, taller for stronger shaking (each grid line is ten times the one below). Hollow marks: the archive has no seismometer data for that time. Tap a day to jump to it."
+},
+{
+"id": 3,
+"title": "Explorer page: How hot was the soil?",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "ChaSTE pushed a 10 cm probe carrying ten thermometers into the ground. The chart draws one line per day: the temperature at each depth, from just under the surface at the top to 10 cm down at the bottom. The day you picked The other days Lunar soil is loose powder with no air between the grains, so heat barely travels through it. That is why a few centimetres make such a difference."
+},
+{
+"id": 4,
+"title": "Explorer page: What is the soil made of?",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "At each stop the Pragyan rover lowered an X-ray instrument, APXS, over the ground for about an hour. Each element gives off X-rays of its own energy. The bars compare this stop with the average of all 23 stops: a bar near the centre line means this patch matches the rest. Lunar soil up close: a bootprint from Apollo 11, 1969. Left of centre: less than average Right: more More than 40% off"
+},
+{
+"id": 5,
+"title": "Explorer page: What was above the ground?",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "The Moon has almost no air, but sunlight knocks electrons loose from the surface and leaves a very thin plasma. RAMBHA-LP, a probe on the lander, measured how hot those electrons were and how many there were. Two-hour medians across the mission; the gold band is the day you picked. The first two days read hotter than later ones and than published values, which isn't explained yet."
+},
+{
+"id": 6,
+"title": "Explorer page: The mission in four parts",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Half a day Vikram lands and the rover rolls down its ramp. A day and a half The instruments switch on and the probe goes into the soil. Eight days The rover drives, stops and reads the soil, again and again. Two days Vikram hops, and both go to sleep before sunset. First, Vikram lands. Then the instruments switch on and the probe goes in. Next the rover drives, stops and reads the soil, again and again. Last, Vikram hops and both sleep before sunset. 114 signals in the seismometer's list that no one has explained yet"
+},
+{
+"id": 7,
+"title": "Explorer page: The mission in numbers",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "68 °C the hottest soil, 4 mm down 23 soil readings by the rover, all much alike"
+},
+{
+"id": 8,
+"title": "Explorer page: Rebuilt from public data",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Where it comes from Every number here is computed from the raw instrument files ISRO publishes on its PRADAN archive. They are read with isda, an open-source Python package written for this project. Only derived values are shown; no raw data is copied. What it can't tell you yet The cause of a signal comes from the seismometer team's list, which they say may contain errors. Soil readings are ratios of X-ray counts, not percentages of each element. The thermometers still include some heat from the probe itself, as ISRO notes. The Sun's height comes from a fit to the LIBS team's operations table, accurate to about 0.05°. Browse ISRO's archive The landing site from orbit, photographed by NASA's Lunar Reconnaissance Orbiter. The box marks Vikram."
+},
+{
+"id": 9,
+"title": "Explorer page: Every day, by its signals",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Data Chandrayaan-3 data: ISRO, archived at the Indian Space Science Data Centre (ISSDC). © reserved ISRO. Used for non-profit scientific work under PRADAN's terms. Not an official ISRO product. Instruments ILSA (LEOS, ISRO). ChaSTE (SPL, VSSC with PRL). RAMBHA-LP (SPL, VSSC). APXS (PRL with SAC and URSC). LIBS (LEOS with URSC). Archived by ISSDC. Pictures Vikram model by Aliva Sahoo, CC BY 4.0. Landing site , NASA GSFC / Arizona State University. Bootprint , NASA. Apollo 16 instruments , NASA / Project Apollo Archive. All via Wikimedia Commons. Twelve days on the Moon. Times are UTC. Built by Madhav Somanath . Pick another day"
+},
+{
+"id": 10,
+"title": "Explorer page: Ask the mission",
+"kind": "page",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Answers come only from this project's data Ask anything about Chandrayaan-3's twelve days at Shiv Shakti: moonquakes, soil temperature, soil chemistry or the plasma above the ground. Answers use only this project's data and notes, and link to their sources. Questions are sent to Claude, Anthropic's AI, to write the answer."
+},
+{
+"id": 11,
+"title": "Data for 23 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug23",
+"text": "23 August 2023 is landing day of Chandrayaan-3's surface mission at Shiv Shakti point. What happened: Vikram touched down at 12:33 UTC; Pragyan rolled out that night. ILSA seismometer: no ground signals are listed for this day. ChaSTE soil temperature: no in-soil readings shown for this day. APXS: the rover made no X-ray soil reading this day. RAMBHA-LP plasma: no measurements this day."
+},
+{
+"id": 12,
+"title": "Data for 24 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug24",
+"text": "24 August 2023 is day 1 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. What happened: ChaSTE pushed its probe into the soil from 12:35 to 20:02 UTC. ILSA seismometer: 1 listed ground signals (1 lander at work). The strongest reached 0 micro-g (µg) at 11:59 UTC, cause: lander at work. ChaSTE soil temperature: no in-soil readings shown for this day. APXS: the rover made no X-ray soil reading this day. RAMBHA-LP plasma: median electron temperature 18,465 K and median electron density 362 per cm³ (6 two-hour medians)."
+},
+{
+"id": 13,
+"title": "Data for 25 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug25",
+"text": "25 August 2023 is day 2 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 19 listed ground signals (10 no known cause, 1 rover driving, 4 APXS at work, 4 lander at work). The strongest reached 7661.9 micro-g (µg) at 13:29 UTC, cause: APXS at work. 3 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 56.8 and 61.9 °C; at 98 mm between -5.5 and -2.4 °C (hourly means). APXS rover soil reading obs01_mob02_20230825 from 13:30 to 14:15 UTC. Element line ratios relative to silicon: Mg 0.0332, Al 0.6724, Ca 0.239, Fe 0.1189, S 0.0051. Difference from the median of all 23 stops: Mg +16%, Al +1%, Ca -1%, Fe +2%, S +9%. LIBS laser: 2 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 11,060 K and median electron density 545 per cm³ (7 two-hour medians)."
+},
+{
+"id": 14,
+"title": "Data for 26 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug26",
+"text": "26 August 2023 is day 3 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 26 listed ground signals (24 no known cause, 2 APXS at work). The strongest reached 437.6 micro-g (µg) at 08:02 UTC, cause: no known cause. ChaSTE soil temperature: at 4 mm depth between 58.6 and 63.5 °C; at 98 mm between -1.9 and 6.6 °C (hourly means). APXS rover soil reading obs02_mob03_20230826 from 14:41 to 15:33 UTC. Element line ratios relative to silicon: Mg 0.0257, Al 0.6663, Ca 0.241, Fe 0.1176, S 0.0048. Difference from the median of all 23 stops: Mg -10%, Al -0%, Ca +0%, Fe +1%, S +2%. APXS rover soil reading obs03_mob04_20230826 from 19:22 to 19:57 UTC. Element line ratios relative to silicon: Mg 0.0331, Al 0.6737, Ca 0.2407, Fe 0.1145, S 0.0051. Difference from the median of all 23 stops: Mg +16%, Al +1%, Ca -0%, Fe -1%, S +9%. LIBS laser: 3 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 6,565 K and median electron density 754 per cm³ (10 two-hour medians)."
+},
+{
+"id": 15,
+"title": "Data for 27 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug27",
+"text": "27 August 2023 is day 4 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 36 listed ground signals (25 no known cause, 6 rover driving, 5 APXS at work). The strongest reached 2912.6 micro-g (µg) at 00:33 UTC, cause: no known cause. 10 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 63.6 and 66.9 °C; at 98 mm between 6.9 and 12.9 °C (hourly means). APXS rover soil reading obs04_mob07_20230827 from 18:22 to 19:27 UTC. Element line ratios relative to silicon: Mg 0.0265, Al 0.6628, Ca 0.239, Fe 0.1105, S 0.0046. Difference from the median of all 23 stops: Mg -7%, Al -1%, Ca -1%, Fe -5%, S -2%. APXS rover soil reading obs05_mob08_20230827 from 22:22 to 23:27 UTC. Element line ratios relative to silicon: Mg 0.0229, Al 0.6527, Ca 0.2378, Fe 0.1142, S 0.0048. Difference from the median of all 23 stops: Mg -20%, Al -2%, Ca -1%, Fe -2%, S +2%. LIBS laser: 3 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 6,470 K and median electron density 857 per cm³ (9 two-hour medians)."
+},
+{
+"id": 16,
+"title": "Data for 28 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug28",
+"text": "28 August 2023 is day 5 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 13 listed ground signals (10 no known cause, 2 rover driving, 1 APXS at work). The strongest reached 802.9 micro-g (µg) at 20:19 UTC, cause: rover driving. 1 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 67.0 and 67.9 °C; at 98 mm between 13.2 and 17.4 °C (hourly means). APXS rover soil reading obs06_mob09_20230828 from 14:22 to 15:27 UTC. Element line ratios relative to silicon: Mg 0.0295, Al 0.6699, Ca 0.2406, Fe 0.1134, S 0.005. Difference from the median of all 23 stops: Mg +4%, Al +0%, Ca -0%, Fe -2%, S +6%. LIBS laser: 3 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 5,840 K and median electron density 932 per cm³ (11 two-hour medians)."
+},
+{
+"id": 17,
+"title": "Data for 29 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug29",
+"text": "29 August 2023 is day 6 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 24 listed ground signals (8 no known cause, 9 rover driving, 7 APXS at work). The strongest reached 1659.1 micro-g (µg) at 21:16 UTC, cause: no known cause. 1 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 65.7 and 67.6 °C; at 98 mm between 17.5 and 19.8 °C (hourly means). APXS rover soil reading obs11_mob19_20230829 from 17:26 to 17:59 UTC. Element line ratios relative to silicon: Mg 0.0334, Al 0.6795, Ca 0.2374, Fe 0.1123, S 0.0045. Difference from the median of all 23 stops: Mg +17%, Al +2%, Ca -1%, Fe -3%, S -4%. APXS rover soil reading obs12_mob20_20230829 from 19:37 to 20:57 UTC. Element line ratios relative to silicon: Mg 0.0302, Al 0.6717, Ca 0.2421, Fe 0.1162, S 0.005. Difference from the median of all 23 stops: Mg +6%, Al +1%, Ca +0%, Fe +0%, S +6%. APXS rover soil reading obs13_mob22_20230829 from 23:57 to 01:20 UTC. Element line ratios relative to silicon: Mg 0.0285, Al 0.6644, Ca 0.2396, Fe 0.1129, S 0.0051. Difference from the median of all 23 stops: Mg +0%, Al -1%, Ca -1%, Fe -3%, S +9%. LIBS laser: 6 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 6,520 K and median electron density 886 per cm³ (11 two-hour medians)."
+},
+{
+"id": 18,
+"title": "Data for 30 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug30",
+"text": "30 August 2023 is day 7 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 33 listed ground signals (12 no known cause, 15 rover driving, 6 APXS at work). The strongest reached 13891.3 micro-g (µg) at 14:46 UTC, cause: rover driving. 3 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 62.6 and 65.6 °C; at 98 mm between 19.8 and 21.1 °C (hourly means). APXS rover soil reading obs15_mob26_20230830 from 05:53 to 08:12 UTC. Element line ratios relative to silicon: Mg 0.0316, Al 0.6719, Ca 0.2559, Fe 0.1467, S 0.0051. Difference from the median of all 23 stops: Mg +11%, Al +1%, Ca +6%, Fe +26%, S +9%. APXS rover soil reading obs16_mob28_20230830 from 12:10 to 13:03 UTC. Element line ratios relative to silicon: Mg 0.0348, Al 0.6749, Ca 0.2449, Fe 0.1199, S 0.0052. Difference from the median of all 23 stops: Mg +22%, Al +1%, Ca +2%, Fe +3%, S +11%. APXS rover soil reading obs17_mob30_20230830 from 15:14 to 17:00 UTC. Element line ratios relative to silicon: Mg 0.0324, Al 0.6747, Ca 0.2447, Fe 0.1238, S 0.0049. Difference from the median of all 23 stops: Mg +14%, Al +1%, Ca +2%, Fe +7%, S +4%. APXS rover soil reading obs18_mob32_20230830 from 19:54 to 22:50 UTC. Element line ratios relative to silicon: Mg 0.0242, Al 0.6658, Ca 0.2434, Fe 0.118, S 0.0045. Difference from the median of all 23 stops: Mg -15%, Al -0%, Ca +1%, Fe +2%, S -4%. LIBS laser: 6 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 6,920 K and median electron density 877 per cm³ (11 two-hour medians)."
+},
+{
+"id": 19,
+"title": "Data for 31 August 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#aug31",
+"text": "31 August 2023 is day 8 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 11 listed ground signals (3 no known cause, 6 rover driving, 2 APXS at work). The strongest reached 10676.3 micro-g (µg) at 16:51 UTC, cause: rover driving. 2 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 57.6 and 62.4 °C; at 98 mm between 20.7 and 21.1 °C (hourly means). APXS rover soil reading obs19_mob33_20230831 from 01:23 to 04:05 UTC. Element line ratios relative to silicon: Mg 0.0275, Al 0.6681, Ca 0.2429, Fe 0.1177, S 0.0043. Difference from the median of all 23 stops: Mg -4%, Al +0%, Ca +1%, Fe +1%, S -9%. APXS rover soil reading obs20_mob34_20230831 from 05:33 to 07:58 UTC. Element line ratios relative to silicon: Mg 0.0279, Al 0.6701, Ca 0.2435, Fe 0.1236, S 0.0045. Difference from the median of all 23 stops: Mg -2%, Al +0%, Ca +1%, Fe +6%, S -4%. APXS rover soil reading obs21_mob36_20230831 from 13:24 to 14:24 UTC. Element line ratios relative to silicon: Mg 0.0244, Al 0.6663, Ca 0.2336, Fe 0.106, S 0.0039. Difference from the median of all 23 stops: Mg -14%, Al -0%, Ca -3%, Fe -9%, S -17%. APXS rover soil reading obs22_mob38_20230831 from 22:15 to 00:50 UTC. Element line ratios relative to silicon: Mg 0.0252, Al 0.6673, Ca 0.2429, Fe 0.1196, S 0.0046. Difference from the median of all 23 stops: Mg -12%, Al -0%, Ca +1%, Fe +3%, S -2%. LIBS laser: 4 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 5,380 K and median electron density 958 per cm³ (8 two-hour medians)."
+},
+{
+"id": 20,
+"title": "Data for 1 September 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#sep01",
+"text": "1 September 2023 is day 9 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. ILSA seismometer: 31 listed ground signals (7 no known cause, 16 rover driving, 8 APXS at work). The strongest reached 16784.9 micro-g (µg) at 01:38 UTC, cause: rover driving. 12 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 51.5 and 57.9 °C; at 98 mm between 20.0 and 29.8 °C (hourly means). APXS rover soil reading obs23_mob39_20230901 from 04:38 to 05:25 UTC. Element line ratios relative to silicon: Mg 0.022, Al 0.6557, Ca 0.2384, Fe 0.1187, S 0.0045. Difference from the median of all 23 stops: Mg -23%, Al -2%, Ca -1%, Fe +2%, S -4%. APXS rover soil reading obs24_mob40_20230901 from 06:45 to 07:06 UTC. Element line ratios relative to silicon: Mg 0.0368, Al 0.6734, Ca 0.2136, Fe 0.0995, S 0.0043. Difference from the median of all 23 stops: Mg +29%, Al +1%, Ca -11%, Fe -14%, S -9%. APXS rover soil reading obs25_mob41_20230901 from 14:36 to 15:26 UTC. Element line ratios relative to silicon: Mg 0.0139, Al 0.6604, Ca 0.241, Fe 0.1149, S 0.0047. Difference from the median of all 23 stops: Mg -51%, Al -1%, Ca +0%, Fe -1%, S +0%. APXS rover soil reading obs26_mob42_20230901 from 19:05 to 20:15 UTC. Element line ratios relative to silicon: Mg 0.0035, Al 0.6387, Ca 0.242, Fe 0.1223, S 0.0047. Difference from the median of all 23 stops: Mg -88%, Al -4%, Ca +0%, Fe +5%, S +0%. LIBS laser: 5 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 6,820 K and median electron density 876 per cm³ (11 two-hour medians)."
+},
+{
+"id": 21,
+"title": "Data for 2 September 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#sep02",
+"text": "2 September 2023 is day 10 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. What happened: The rover made its last readings before ISRO put it to sleep. ILSA seismometer: 15 listed ground signals (3 no known cause, 7 rover driving, 3 APXS at work, 2 lander at work). The strongest reached 269.4 micro-g (µg) at 08:50 UTC, cause: rover driving. 3 of the signals have no seismometer data in the archive. ChaSTE soil temperature: at 4 mm depth between 47.8 and 56.7 °C; at 98 mm between 18.8 and 63.9 °C (hourly means). APXS rover soil reading obs28_mob44_20230902 from 02:33 to 05:11 UTC. Element line ratios relative to silicon: Mg 0.0289, Al 0.671, Ca 0.2429, Fe 0.1127, S 0.0052. Difference from the median of all 23 stops: Mg +1%, Al +0%, Ca +1%, Fe -3%, S +11%. APXS rover soil reading obs29_mob45_20230902 from 06:36 to 07:18 UTC. Element line ratios relative to silicon: Mg 0.0318, Al 0.6453, Ca 0.2481, Fe 0.1027, S 0.0045. Difference from the median of all 23 stops: Mg +12%, Al -3%, Ca +3%, Fe -12%, S -4%. LIBS laser: 1 laser measurement time(s) this day. RAMBHA-LP plasma: median electron temperature 6,640 K and median electron density 876 per cm³ (7 two-hour medians)."
+},
+{
+"id": 22,
+"title": "Data for 3 September 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#sep03",
+"text": "3 September 2023 is day 11 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. What happened: Vikram hopped about 40 cm and landed again, ISRO reported. ILSA seismometer: 18 listed ground signals (3 no known cause, 15 lander at work). The strongest reached 1928.9 micro-g (µg) at 00:18 UTC, cause: no known cause. 1 of the signals have no seismometer data in the archive. ChaSTE soil temperature: no in-soil readings shown for this day. APXS: the rover made no X-ray soil reading this day. RAMBHA-LP plasma: no measurements this day."
+},
+{
+"id": 23,
+"title": "Data for 4 September 2023",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/#sep04",
+"text": "4 September 2023 is day 12 after landing of Chandrayaan-3's surface mission at Shiv Shakti point. What happened: The lander was put to sleep ahead of sunset. ILSA seismometer: 9 listed ground signals (9 no known cause). The strongest reached 1899.3 micro-g (µg) at 12:23 UTC, cause: no known cause. ChaSTE soil temperature: no in-soil readings shown for this day. APXS: the rover made no X-ray soil reading this day. RAMBHA-LP plasma: no measurements this day."
+},
+{
+"id": 24,
+"title": "Data: whole mission, moonquakes (ILSA seismometer)",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Across the mission the ILSA event list has 236 ground signals: 114 no known cause, 62 rover driving, 38 APXS at work, 22 lander at work. 200 of them have seismometer data in the archive. Typical (median) peak shaking by cause: no known cause 37.4 µg, rover driving 265.5 µg, APXS at work 48.8 µg, lander at work 658.9 µg."
+},
+{
+"id": 25,
+"title": "Data: whole mission, soil temperature (ChaSTE)",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "The hottest soil reading, the highest soil temperature of the mission, was 67.9 °C at 4 mm deep at 2023-08-28T12:00Z (before the 1 September heating experiments). ChaSTE thermometer depths (mm): 4, 10, 16, 22, 28, 36, 46, 63, 81, 98."
+},
+{
+"id": 26,
+"title": "Data: whole mission, soil chemistry (APXS)",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "The rover's APXS made 23 soil readings; median line ratios to silicon: Mg 0.0285, Al 0.6681, Ca 0.2410, Fe 0.1162, S 0.0047. The odd one out is obs26_mob42_20230901, with Mg ratio 0.0035 against a median of 0.0285."
+},
+{
+"id": 27,
+"title": "Data: whole mission, plasma (RAMBHA-LP)",
+"kind": "data",
+"url": "https://madhavsomanath.github.io/Chandrayaan3-days/",
+"text": "Plasma electron temperature over the mission ranges 3,830 to 25,910 K; electron density 342 to 1,060 per cm³ (two-hour medians)."
+},
+{
+"id": 28,
+"title": "README: Chandrayaan3-days",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "# Chandrayaan3-days Chandrayaan-3's twelve days on the Moon, rebuilt from ISRO's public archive. **[Open the explorer →](https://madhavsomanath.github.io/Chandrayaan3-days/)**"
+},
+{
+"id": 29,
+"title": "README: What this is",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## What this is On 23 August 2023, India's Chandrayaan-3 landed near the Moon's south pole. For the next twelve days the Vikram lander and the Pragyan rover measured the ground under them: how it shook, how hot it was, what it's made of, and the thin plasma above it. ISRO publishes the raw instrument files on its [PRADAN](https://pradan.issdc.gov.in/) archive, but they're scientific PDS4 files that need specialist tools to open. This project turns those files into two things: - **A website anyone can read.** Pick a day of the mission and see, in plain language, what each instrument found that day. - **A Python package, `isda`,** that reads the five surface instruments' files into tidy tables, for anyone who wants to work with the data themselves. Every number on the site is computed here from ISRO's files. Two notebooks check the package against results ISRO and its scientists have published."
+},
+{
+"id": 30,
+"title": "README: Pick a day",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### Pick a day Each circle is one day, placed at the height the Sun really reached above the landing site that day. Near the pole the Sun never rose higher than 19°, so the whole mission happened between a lunar mid-morning and late afternoon. Tap a circle, use the arrow buttons or your keyboard's arrow keys, or swipe on a phone. Every section below updates to that day, and each day has its own link (for example `#aug30`)."
+},
+{
+"id": 31,
+"title": "README: Four questions, answered for the day you pick",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### Four questions, answered for the day you pick Each section asks one question, explains in a sentence how the instrument answers it, and writes a short summary for the chosen day in the gold box. Did the ground shake? Every signal the ILSA seismometer recorded that day, with its cause where the team could find one (rover driving, an instrument at work, or unknown). Press play to hear the shaking, sped up so your ears can pick it up. How hot was the soil? ChaSTE's ten thermometers on a 10 cm probe. The chosen day is drawn over all the others: about 60 °C just under the surface, close to freezing 10 cm down. What is the soil made of? At each stop the rover's APXS measured magnesium, aluminium, calcium, iron and sulphur. Bars show how each stop differs from the average of all 23; most sit close to the centre line. What was above the ground? RAMBHA-LP measured the very thin plasma over the surface: electrons hotter than the Sun's surface, but only hundreds per cubic centimetre. Further down, the page sums up the mission in four parts and three numbers, and says plainly what the data can't tell you yet. It works on phones, tablets and desktops."
+},
+{
+"id": 32,
+"title": "README: How it fits together",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## How it fits together | Folder | What's in it | |---|---| | `src/isda/` | The package. `pds4.py` reads any PDS4 product from its label; `ch3.py` has one reader per Chandrayaan-3 instrument | | `tests/` | Tests for the readers, run against real archive files | | `notebooks/` | Two notebooks that reproduce published Chandrayaan-3 results | | `site/` | The explorer: `index.html`, the data it loads, the pictures, and `export.py`, which builds the data | | `.github/workflows/pages.yml` | Publishes `site/` to GitHub Pages whenever `main` changes | | `docs/screenshots/` | The pictures in this README | The raw data never goes into the repository. It stays in `data/`, which git ignores."
+},
+{
+"id": 33,
+"title": "README: Setup",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## Setup You need Python 3.10 or newer, and a free PRADAN account for the data."
+},
+{
+"id": 34,
+"title": "README: 1. Install",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 1. Install ```bash git clone https://github.com/MadhavSomanath/Chandrayaan3-days.git cd Chandrayaan3-days python3 -m venv .venv && .venv/bin/pip install -e '.[test]' ```"
+},
+{
+"id": 35,
+"title": "README: 2. Download the data",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 2. Download the data Sign in at [PRADAN](https://pradan.issdc.gov.in/), open Chandrayaan-3, and download the surface instruments (\"Bulk Download\" avoids the ZIP size cap). Unzip each one into `data/raw/ch3/`: | Instrument | What it measures | Folder | Size unpacked | |---|---|---|---| | ILSA | Ground shaking | `data/raw/ch3/ilsa` | ~16 GB | | RAMBHA-LP | Plasma above the surface | `data/raw/ch3/rambha` | ~6 GB (only the `_rawB` folders are read) | | APXS | Soil elements (rover) | `data/raw/ch3/apxs` | ~1.2 GB | | ChaSTE | Soil temperature | `data/raw/ch3/chaste` | ~115 MB | | LIBS | Soil elements by laser (rover) | `data/raw/ch3/libs` | ~124 MB | The site also reads ILSA's event list, `ILSA_EventIdetification_List_Note.pdf`, from `data/raw/ch3/docs/`. It's in the ILSA documents on PRADAN. See what you've got: ```bash .venv/bin/isda inventory data/raw/ch3 ```"
+},
+{
+"id": 36,
+"title": "README: 3. Run the tests",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 3. Run the tests The tests read real archive files, so they need the data from step 2. ```bash .venv/bin/python -m pytest -q ```"
+},
+{
+"id": 37,
+"title": "README: 4. Use the readers",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 4. Use the readers Load any product from its label: ```python from isda import load objects = load(\"data/raw/ch3/.../some_product.xml\") # {object name: DataFrame or ndarray} df = next(iter(objects.values())) df.attrs[\"units\"] # column -> unit, from the PDS4 label ``` Or use the Chandrayaan-3 readers, which return tidy, UTC-indexed DataFrames: ```python from isda import ch3 temps = ch3.chaste(\"data/raw/ch3/chaste\") # K, sensors 1..10; depths in ch3.CHASTE_DEPTH_MM quake = ch3.ilsa(\"data/raw/ch3/ilsa\", \"2023-08-25 17:00\", \"2023-08-25 17:05\") # m/s^2, reads only the files needed xray = ch3.apxs(\"data/raw/ch3/apxs/apx/data/obs29_mob45_20230902\") # counts vs energy (keV) spectra, shots = ch3.libs(\"data/raw/ch3/libs/lib-v2/data/calibrated/20230831/ / .xml\") # counts vs nm sweeps = ch3.rambha(\"data/raw/ch3/rambha\", \"2023-08-29 00:10\", \"2023-08-29 01:10\") # I-V sweeps, 0.1 V steps plasma = ch3.langmuir(sweeps) # per sweep: floating/plasma potential (V), Te (eV, K), Ne (m^-3) ```"
+},
+{
+"id": 38,
+"title": "README: 5. Run the notebooks",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 5. Run the notebooks ```bash .venv/bin/pip install -e '.[notebooks]' cd notebooks && ../.venv/bin/jupyter nbconvert --to notebook --execute --inplace 01_chaste_temperature_profile.ipynb ```"
+},
+{
+"id": 39,
+"title": "README: 6. Rebuild and run the explorer locally",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 6. Rebuild and run the explorer locally ```bash .venv/bin/python site/export.py # ~10 min; writes site/data.json and site/audio/ .json .venv/bin/python -m http.server 8765 --directory site # then open http://localhost:8765 ``` `export.py` writes only derived values (hourly means, event peaks, element ratios, short normalised waveforms), never raw products. The site already includes these files, so you only need this step if you change how they're computed."
+},
+{
+"id": 40,
+"title": "README: 7. Publish your own copy",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 7. Publish your own copy Fork the repository, then in its **Settings → Pages** set **Source** to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` publishes `site/` on every push to `main`. `index.html` has no ` `/` ` wrapper because it's also published as a claude.ai artifact; the workflow adds one."
+},
+{
+"id": 41,
+"title": "README: 8. Optional: the \"Ask the mission\" chatbot",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "### 8. Optional: the \"Ask the mission\" chatbot The explorer has a chatbot that answers questions from this project's own data, with citations. It runs on a small Cloudflare Worker that keeps the Claude API key off the page. [chat/README.md](chat/README.md) covers running it locally and putting it online."
+},
+{
+"id": 42,
+"title": "README: Results",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## Results | Notebook | Reproduces | Result | |---|---|---| | `01_chaste_temperature_profile` | ISRO's first temperature-vs-depth plot (27 Aug 2023) | 68 °C at 4 mm (ISRO: ~70 °C). Coldest is −5.6 °C at 98 mm, not ISRO's −10 °C at 80 mm. Gradient 3.9–6.8 °C/cm through 25–31 Aug | | `02_rover_soil_chemistry` | Vadawale et al. 2024 (*Nature*), Sinha et al. 2025, ISRO's LIBS release (29 Aug 2023) | All 23 APXS soil stops, element ratios within ~1–14 % of each other, sulphur at every stop. LIBS shows Mg (strongest line), O, Al and Si; sulphur doesn't show in a traverse-wide stack | `ch3.langmuir()` follows the RAMBHA-LP user manual's method. It's a first pass. Over the whole mission (6,533 sweeps, 85 s), the daily median electron temperature is 5,300–7,500 K from 26 Aug on, inside the published 3,000–8,000 K ([Manju et al. 2025, MNRAS](https://doi.org/10.1093/mnras/staf1276)). The daily median density is 3.8–9.7×10⁸ m⁻³, against their 3.8–6×10⁸, so it runs up to ~1.6× high. Likely causes: the fit windows, and ISRO's per-day shift of the zero crossing, which this code doesn't apply. 24–25 Aug (just after probe deployment) give 11,000–18,000 K and need a closer look. Channel 1 at 20 MΩ is excluded: it disagrees with the other four settings by ~4×. The day picker places each day at the Sun's height from"
+},
+{
+"id": 43,
+"title": "README: Results (2)",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "a fit to the LIBS operations table (local noon 28 Aug 2023 12:58 UTC, peak 19.4°, accurate to about 0.05°)."
+},
+{
+"id": 44,
+"title": "README: Known archive issues",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## Known archive issues Found while building the readers. Worth reporting to ISSDC (issdc@istrac.gov.in). - **ChaSTE `ch3_cht_cal_20230828T11`**: rows aren't padded to the fixed width the label declares, and the file has 3,248 records against the label's 3,337. `ch3.chaste()` reads it as plain CSV and warns. - **ChaSTE calibration**: `ch3_cht_res_temp_cal_coe.xml` points to `ch3_cht_res_temp_cal_coe.csv`, but the file shipped as `ch3_cht_temp_cal_coe.csv`. - **RAMBHA-LP `nrB` dump 20230831T004808416**: both labels name the `nrA` files. `load()` falls back to the file named like the label and warns. - **ChaSTE `re-insertion_temperature.xml`**: the label gives the unit as K, but the values are °C (0–37). - **LIBS wavelengths run long**: in the calibrated products, lines sit ~1.6 nm high in the ultraviolet (Si 251.6, Mg 280.3) and ~0.8 nm high at O 777.2. The user manual's detector-temperature correction isn't applied. - **ILSA gaps aren't documented**: e.g. no data 18:16–19:31 UTC on 25 Aug 2023 (raw or calibrated), though the event list has rover motion at 18:58. Every `miscellaneous/missing_data_regions` file is empty. Use `isda inventory` start/stop times to see real coverage."
+},
+{
+"id": 45,
+"title": "README: Data rules",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## Data rules From the PRADAN Chandrayaan-3 disclaimer: - The data is free for **non-profit scientific use**; ISRO keeps ownership and copyright. - **Do not copy, lease or loan the raw data** without ISRO/DOS permission. This repo never commits or re-hosts raw files. - **No commercial use**, including selling data derived from it. - Any print of the data carries **\"© reserved ISRO\"**. Every notebook, figure and page that uses an instrument's data carries that instrument's acknowledgement: - **ILSA:** We acknowledge the instrument development team - ILSA, Laboratory for Electro-Optics Systems (LEOS), ISRO, Bengaluru. In addition, we acknowledge Chandrayaan-3 Project, Mission, Indian Space Science Data Centre (ISSDC) for data handling, Storage and Archival. - **ChaSTE:** We acknowledge the use of data from the Chandrayaan-3, of Indian Space Research Organisation (ISRO), available at the PRADAN Portal, Indian Space Science Data Centre (ISSDC). ChaSTE Payload is jointly developed by Space Physics Laboratory (SPL), Vikram Sarabhai Space Centre (VSSC), Thiruvananthapuram and Physical Research Laboratory (PRL), Ahmedabad. - **RAMBHA-LP:** We acknowledge the use of data or results from RAMBHA-LP on Indian Space Research Organization's Chandrayaan-3 lander, which is the first ever lunar landing mission close to the South pole. The above data is archived at the Indian Space Science Data Centre (ISSDC). The lead entity for the development of the RAMBHA-LP payload is Space"
+},
+{
+"id": 46,
+"title": "README: Data rules (2)",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "Physics Laboratory (SPL), Vikram Sarabhai Space Centre (VSSC), Thiruvananthapuram. - **APXS:** We acknowledge the use of data from the APXS instrument on the rover of the Chandrayaan-3 mission of the Indian Space Research Organisation (ISRO), archived at the Indian Space Science Data Centre (ISSDC). APXS experiment is designed and developed by the Physical Research Laboratory (PRL), Ahmedabad with support from Space Applications Center (SAC), Ahmedabad and U.R Rao Satellite Center (URSC), Bangalore. - **LIBS:** We acknowledge the use of the data recorded by the LIBS instrument aboard the ISRO Pragyan rover, Chandrayaan-3 mission, archived at the Indian Space Science Data Centre (ISSDC). The LIBS instrument is developed at the Laboratory for Electro-Optics Systems (LEOS), Bengaluru with support from U.R.Rao Satellite Centre (URSC), Bengaluru."
+},
+{
+"id": 47,
+"title": "README: Picture credits",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## Picture credits The explorer and the screenshots above use these pictures, all via Wikimedia Commons: [Vikram model](https://commons.wikimedia.org/w/index.php?curid=178618837) by Aliva Sahoo (CC BY 4.0); [landing site from orbit](https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_LRO_imagery_of_Chandrayaan-3_Landing_Site_(marked).png), NASA GSFC / Arizona State University; [Apollo 11 bootprint](https://commons.wikimedia.org/wiki/File:Apollo_11_bootprint.jpg), NASA; [Apollo 16 instruments](https://commons.wikimedia.org/wiki/File:AS16-113-18379_(21463258210).jpg), NASA / Project Apollo Archive."
+},
+{
+"id": 48,
+"title": "README: License",
+"kind": "readme",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/README.md",
+"text": "## License The code is released under the [MIT License](LICENSE). The Chandrayaan-3 data and the values derived from it belong to ISRO and follow the [data rules](#data-rules) above. The pictures keep their own licences, listed under [Picture credits](#picture-credits)."
+},
+{
+"id": 49,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': Introduction",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "# How hot is the soil at the Moon's south pole? **Reproducing ChaSTE's first result from Chandrayaan-3's public data.** On 23 August 2023 Chandrayaan-3 landed at 69.4° S, the highest-latitude soft landing on the Moon. The next day the lander pushed **ChaSTE** (Chandra's Surface Thermophysical Experiment), a 10-sensor thermal probe, into the regolith. On 27 August ISRO released the first graph: about **70 °C at the surface**, falling to about **−10 °C at 80 mm** depth, a far steeper gradient than expected. This notebook rebuilds that result from the archived data on ISRO's PRADAN portal, using the [`isda`](../README.md) readers: 1. Watch the probe go in (24 Aug), using its own penetration log. 2. Rebuild the temperature-vs-depth profile and compare it with ISRO's numbers. 3. Follow the profile through the lunar day."
+},
+{
+"id": 50,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': 1. Load the data",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "## 1. Load the data `ch3.chaste()` returns calibrated temperatures in kelvin, one column per sensor (1 = top of the probe), indexed by UTC. The insertion happened in the *commissioning* phase; the rest of the surface mission is *nominal operation*. The penetration log (motor stroke in mm) sits in the bundle's miscellaneous folder. Result: 529,695 readings per sensor, 24 Aug 12:19 to 02 Sep 10:15 UTC Sensor depths when fully inserted (mm): {1: 4, 2: 10, 3: 16, 4: 22, 5: 28, 6: 36, 7: 46, 8: 63, 9: 81, 10: 98}"
+},
+{
+"id": 51,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': 2. The probe goes in",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "## 2. The probe goes in The probe is driven down in 2.65 mm steps by telecommand. Before insertion every sensor reads the same: the probe is sitting in sunlight on the lander. As each sensor enters the soil, it starts cooling toward the regolith's own temperature. Result: Insertion: 12:35 to 20:02 UTC on 24 Aug, 102 steps, 267.0 mm of stroke"
+},
+{
+"id": 52,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': 3. The temperature profile",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "## 3. The temperature profile Two snapshots after insertion: the first reading the next morning, once the probe had settled (closest to ISRO's 27 August graph), and the hottest moment in the soil. Readings from before insertion are left out: then the probe was sitting in sunlight on the lander, and every sensor read 67–80 °C. The hollow markers are the two numbers in ISRO's release."
+},
+{
+"id": 53,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': 4. Through the lunar day",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "## 4. Through the lunar day The Sun stays low at 69° S and moves slowly across the two-week lunar day. Hourly means for four depths. The bumps on 1–2 September are most likely ChaSTE's active heating experiments (a heater at sensor 9 is switched on to measure the soil's thermal conductivity), so the gradient is computed before them. Result: Gradient between 4 and 98 mm, 25-31 Aug: 3.9 to 6.8 °C per cm"
+},
+{
+"id": 54,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': What this reproduces, and what it doesn't",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "## What this reproduces, and what it doesn't - **Reproduced:** the near-surface maximum. The 4 mm sensor peaks at about 68 °C, matching ISRO's \"about 70 °C\". - **Reproduced:** a steep gradient, several °C per centimetre, in soil that conducts heat very poorly. - **Not reproduced exactly:** ISRO's \"−10 °C at 80 mm\". In the released calibrated data the coldest reading is about −5 °C, at the 98 mm sensor; at 81 mm it's about +10 °C the morning after insertion. We haven't pinned down why; ISRO's plot may use a different depth reference or pre-calibration values. **Caveats** - Depths assume full insertion, with sensor 1 at 4 mm (ChaSTE user manual, Table 1). They don't apply while the probe was still going in. - ISRO notes the values are what the sensors read; correcting for the probe's own heating is still being worked on. - The later re-insertion site (the 59 °C flat spot in the 2025 paper) has only 8 minutes of calibrated data in the archive, so it isn't covered here. --- **Acknowledgement.** We acknowledge the use of data from the Chandrayaan-3, of Indian Space Research Organisation (ISRO), available at the PRADAN Portal, Indian Space Science Data Centre (ISSDC). ChaSTE Payload is jointly developed by Space Physics Laboratory (SPL), Vikram Sarabhai Space Centre (VSSC), Thiruvananthapuram and Physical"
+},
+{
+"id": 55,
+"title": "Notebook 'How hot is the soil at the Moon's south pole?': What this reproduces, and what it doesn't (2)",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/01_chaste_temperature_profile.ipynb",
+"text": "Research Laboratory (PRL), Ahmedabad. Figures carry \"© reserved ISRO\" as the data terms require."
+},
+{
+"id": 56,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': Introduction",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "# What is the soil at the Moon's south pole made of? **Reading Chandrayaan-3's rover chemistry from the public archive.** The Pragyan rover carried two instruments that read the elements in the soil: - **APXS** (Alpha Particle X-ray Spectrometer, PRL Ahmedabad) bombards the ground with alpha particles and X-rays from curium-244 sources, then counts the X-rays each element gives back. - **LIBS** (Laser Induced Breakdown Spectroscope, LEOS Bengaluru) fires a laser that turns a speck of soil into plasma, then records the light that plasma emits. Published results to compare against: - Vadawale et al. 2024, *Nature* 633, 327: **23 APXS measurements** within 50 m of the landing site show a **uniform** soil of ferroan anorthosite, with more magnesium than expected. - Sinha et al. 2025, *Communications Earth & Environment*: **sulphur at 900–1,400 ppm**. - ISRO, 29 Aug 2023: LIBS \"unambiguously confirms\" **sulphur**, along with Al, Ca, Fe, Cr, Ti, Mn, Si and O."
+},
+{
+"id": 57,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': 1. APXS: one spectrum per rover stop",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "## 1. APXS: one spectrum per rover stop `ch3.apxs()` returns the calibrated spectrum of one stop, counts against energy. Some stops only hold spectra of the on-board calibration target, so they're skipped. Result: 23 of 28 stops have a lunar-soil spectrum (the paper used 23)"
+},
+{
+"id": 58,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': 2. Is the soil the same everywhere?",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "## 2. Is the soil the same everywhere? The paper's headline is that the 23 spots look alike. A quick test: net counts in each element's line (minus the continuum on either side), relative to silicon, stop by stop. These are **count ratios, not abundances**: turning them into weight percent needs a fit with the instrument response, which is the next step. But if the soil changed from stop to stop, these ratios would scatter. Result: Odd one out: obs26_mob42_20230901, Mg ratio 0.0035 against a median of 0.029"
+},
+{
+"id": 59,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': 3. Sulphur in APXS",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "## 3. Sulphur in APXS Sulphur's K-alpha line sits at 2.31 keV, between silicon and potassium. Here it is at every stop: Result: Sulphur net counts per stop: median 1,017, smallest 189"
+},
+{
+"id": 60,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': 4. LIBS: plasma light",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "## 4. LIBS: plasma light `ch3.libs()` returns every laser shot of one product as a spectrum (counts against wavelength) plus per-shot settings. Each product includes laser-off shots, which record the detector's background. Subtracting them from the laser-on shots leaves the plasma light. Stacking all products (median) brings out lines common to the whole traverse. Result: 234 of 301 products have both laser-on and laser-off shots"
+},
+{
+"id": 61,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': What this reproduces, and what it doesn't",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "## What this reproduces, and what it doesn't - **Reproduced:** APXS has exactly the paper's **23 soil measurements**, and the element ratios barely change between stops, consistent with a **uniform** soil around Shiv Shakti point. - **Reproduced:** **sulphur** shows clearly in APXS at every stop. - **Worth a closer look:** one stop (named above) has a tenth of the usual magnesium line. It could be real or an artefact of this simple line-sum next to the strong aluminium peak; the full fit will tell. - **Partly reproduced:** a simple LIBS stack shows **magnesium, oxygen, aluminium and silicon**, plus the calcium/aluminium blend near 395 nm. Magnesium's 280 nm line is the strongest in the whole stack, which fits the APXS finding of a Mg-rich soil. **Titanium is borderline** (about 3× the noise, at the same shift as the other ultraviolet lines). **Sulphur, chromium and manganese don't stand out** this way. - **Found along the way:** the archived LIBS wavelengths run long by about 1.6 nm in the ultraviolet (Si, Mg) and 0.8 nm at 777 nm (O). The LIBS user manual describes a correction for detector temperature that isn't applied to the calibrated product. The peak near 562 nm sits close to twice the Mg line's wavelength, possibly the grating's second order. ISRO's LIBS results used the full pipeline in the"
+},
+{
+"id": 62,
+"title": "Notebook 'What is the soil at the Moon's south pole made of?': What this reproduces, and what it doesn't (2)",
+"kind": "notebook",
+"url": "https://github.com/MadhavSomanath/Chandrayaan3-days/blob/main/notebooks/02_rover_soil_chemistry.ipynb",
+"text": "LIBS user manual (denoising, baseline removal, and wavelength corrections for detector temperature and working distance), at single spots rather than a traverse-wide median. **Next steps** 1. Fit the APXS spectra with the instrument response (`*_rsp`) to get weight-percent oxides and compare with the paper's values. 2. Implement the LIBS manual's processing steps, then look for sulphur spot by spot. --- **Acknowledgements.** APXS: We acknowledge the use of data from the APXS instrument on the rover of the Chandrayaan-3 mission of the Indian Space Research Organisation (ISRO), archived at the Indian Space Science Data Centre (ISSDC). APXS experiment is designed and developed by the Physical Research Laboratory (PRL), Ahmedabad with support from Space Applications Center (SAC), Ahmedabad and U.R Rao Satellite Center (URSC), Bangalore. LIBS: We acknowledge the use of the data recorded by the LIBS instrument aboard the ISRO Pragyan rover, Chandrayaan-3 mission, archived at the Indian Space Science Data Centre (ISSDC). The LIBS instrument is developed at the Laboratory for Electro-Optics Systems (LEOS), Bengaluru with support from U.R.Rao Satellite Centre (URSC), Bengaluru. Figures carry \"© reserved ISRO\" as the data terms require."
+}
+]
