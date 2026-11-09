@@ -12,7 +12,7 @@ browser (site/index.html)  --POST /chat-->  Cloudflare Worker (chat/worker)  -->
 - **How the key stays safe:** the Claude API key exists only on the Worker, as a secret. The page never sees it.
 - **How the Worker is protected:**
   - It only accepts requests from the origins listed in `ALLOWED_ORIGINS`.
-  - Each visitor IP gets 8 questions a minute.
+  - Each visitor IP gets 8 questions a minute, and the whole site gets 40 a minute.
   - Questions are capped at 400 characters.
   - Questions that share no words with the corpus are declined without calling Claude.
 
@@ -116,7 +116,13 @@ Push to `main`, and GitHub Pages republishes the page with the chat button.
 
 **7. Set a spending limit.**
 
-In the Anthropic console, go to **Settings → Limits** and set a monthly limit, for example $5.
+Give this chat its own key, so a problem with it can't touch your other projects:
+
+1. In the Anthropic console, create a workspace just for this chat.
+2. Set a monthly spend limit on that workspace, for example $5.
+3. Create the API key inside that workspace and use it in step 3.
+
+If you already stored a key from another workspace, run step 3 again with the new key.
 
 The Worker's checks stop browsers on other sites from using your chat. They can't stop someone running a script that fakes the page's address. The rate limit slows such a script down, and the spending limit is what caps the bill. Each answer costs about a tenth of a cent with Haiku.
 

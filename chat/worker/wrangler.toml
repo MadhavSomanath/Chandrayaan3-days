@@ -12,5 +12,11 @@ name = "LIMITER"
 namespace_id = "1001"
 simple = { limit = 8, period = 60 }
 
+# 40 questions per minute for the whole site, however many IPs ask (per Cloudflare location).
+[[ratelimits]]
+name = "SITE_LIMITER"
+namespace_id = "1002"
+simple = { limit = 40, period = 60 }
+
 # The Claude API key is NOT here. Locally it goes in .dev.vars (git-ignored);
 # in production run: npx wrangler secret put ANTHROPIC_API_KEY
