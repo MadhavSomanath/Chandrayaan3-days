@@ -1,33 +1,35 @@
 # Chandrayaan3-days
 
-Chandrayaan-3's twelve days on the Moon, rebuilt from ISRO's public archive.
+Chandrayaan-3's twelve days on the Moon, rebuilt from ISRO's own raw data.
 
 **[Open the explorer →](https://madhavsomanath.github.io/Chandrayaan3-days/)**
 
 ![The explorer's opening screen: "Twelve days on the Moon"](docs/screenshots/hero.jpg)
 
-## What this is
+## Why this exists
 
-On 23 August 2023, India's Chandrayaan-3 landed near the Moon's south pole. For the next twelve days the Vikram lander and the Pragyan rover measured the ground under them: how it shook, how hot it was, what it's made of, and the thin plasma above it. ISRO publishes the raw instrument files on its [PRADAN](https://pradan.issdc.gov.in/) archive, but they're scientific PDS4 files that need specialist tools to open.
+On 23 August 2023, Chandrayaan-3 landed near the Moon's south pole. For the next twelve days the Vikram lander and the Pragyan rover measured the ground under them: how it shook, how hot it was, what it's made of, and the thin plasma above it.
 
-This project turns those files into two things:
+Most of us saw that mission through press releases and a handful of plots. The actual measurements are public, on ISRO's [PRADAN](https://pradan.issdc.gov.in/) archive, but they come as PDS4 files that you can't open without specialist tools and a fair bit of patience. I wanted to see what the instruments really recorded, day by day, and make that readable for people who'll never download a 16 GB seismometer archive.
+
+So this project is two things:
 
 - **A website anyone can read.** Pick a day of the mission and see, in plain language, what each instrument found that day.
-- **A Python package, `isda`,** that reads the five surface instruments' files into tidy tables, for anyone who wants to work with the data themselves.
+- **A Python package, `isda`,** that reads the five surface instruments' files into tidy tables, for anyone who'd rather dig into the data themselves.
 
-Every number on the site is computed here from ISRO's files. Two notebooks check the package against results ISRO and its scientists have published.
+Every number on the site is computed here from ISRO's files, not copied from a paper. To keep myself honest, two notebooks check the package against results ISRO and its scientists have published, including the places where my numbers don't quite match.
 
 ## What the explorer shows
 
 ### Pick a day
 
-Each circle is one day, placed at the height the Sun really reached above the landing site that day. Near the pole the Sun never rose higher than 19°, so the whole mission happened between a lunar mid-morning and late afternoon. Tap a circle, use the arrow buttons or your keyboard's arrow keys, or swipe on a phone. Every section below updates to that day, and each day has its own link (for example `#aug30`).
+Each dot on the arc is one day, placed at the height the Sun actually reached above the landing site. Near the pole the Sun never got higher than 19°, so the whole mission happened between a lunar mid-morning and late afternoon. That detail surprised me, and it's why the picker is drawn as the Sun's path rather than a plain list of dates. Tap or drag along the arc, use the arrow buttons or your keyboard, or swipe on a phone. Everything below updates to that day, and each day has its own link (for example `#aug30`).
 
-![The day picker: thirteen circles along the Sun's path, with 26 August selected](docs/screenshots/day-picker.jpg)
+![The day picker: one dot per day along the Sun's path, with 26 August selected](docs/screenshots/day-picker.jpg)
 
 ### Four questions, answered for the day you pick
 
-Each section asks one question, explains in a sentence how the instrument answers it, and writes a short summary for the chosen day in the gold box.
+Each section asks one simple question, says in a sentence how the instrument answers it, and sums up the chosen day in the gold box.
 
 <table>
   <tr>
@@ -48,7 +50,7 @@ Each section asks one question, explains in a sentence how the instrument answer
   </tr>
 </table>
 
-Further down, the page sums up the mission in four parts and three numbers, and says plainly what the data can't tell you yet. It works on phones, tablets and desktops.
+Further down, the page sums up the mission in four parts and three numbers, and is upfront about what the data can't tell us yet. It works on phones, tablets and desktops, and most of the fiddly design work went into making the phone version feel right.
 
 ## How it fits together
 
@@ -71,7 +73,7 @@ flowchart LR
 | `.github/workflows/pages.yml` | Publishes `site/` to GitHub Pages whenever `main` changes |
 | `docs/screenshots/` | The pictures in this README |
 
-The raw data never goes into the repository. It stays in `data/`, which git ignores.
+The raw data never goes into the repository: ISRO's rules don't allow re-hosting it. It stays in `data/`, which git ignores.
 
 ## Setup
 
@@ -158,7 +160,7 @@ Fork the repository, then in its **Settings → Pages** set **Source** to **GitH
 
 ### 8. Optional: the "Ask the mission" chatbot
 
-The explorer has a chatbot that answers questions from this project's own data, with citations. It runs on a small Cloudflare Worker that keeps the Claude API key off the page. [chat/README.md](chat/README.md) covers running it locally and putting it online.
+The explorer has a chatbot that answers questions using only this project's own data, and cites where each answer comes from. If the answer isn't in the data, it says so instead of guessing. It runs on a small Cloudflare Worker, so the Claude API key never touches the page. [chat/README.md](chat/README.md) covers running it locally and putting it online.
 
 ## Results
 
@@ -167,13 +169,15 @@ The explorer has a chatbot that answers questions from this project's own data, 
 | `01_chaste_temperature_profile` | ISRO's first temperature-vs-depth plot (27 Aug 2023) | 68 °C at 4 mm (ISRO: ~70 °C). Coldest is −5.6 °C at 98 mm, not ISRO's −10 °C at 80 mm. Gradient 3.9–6.8 °C/cm through 25–31 Aug |
 | `02_rover_soil_chemistry` | Vadawale et al. 2024 (*Nature*), Sinha et al. 2025, ISRO's LIBS release (29 Aug 2023) | All 23 APXS soil stops, element ratios within ~1–14 % of each other, sulphur at every stop. LIBS shows Mg (strongest line), O, Al and Si; sulphur doesn't show in a traverse-wide stack |
 
-`ch3.langmuir()` follows the RAMBHA-LP user manual's method. It's a first pass. Over the whole mission (6,533 sweeps, 85 s), the daily median electron temperature is 5,300–7,500 K from 26 Aug on, inside the published 3,000–8,000 K ([Manju et al. 2025, MNRAS](https://doi.org/10.1093/mnras/staf1276)). The daily median density is 3.8–9.7×10⁸ m⁻³, against their 3.8–6×10⁸, so it runs up to ~1.6× high. Likely causes: the fit windows, and ISRO's per-day shift of the zero crossing, which this code doesn't apply. 24–25 Aug (just after probe deployment) give 11,000–18,000 K and need a closer look. Channel 1 at 20 MΩ is excluded: it disagrees with the other four settings by ~4×.
+The temperature result was the most fun to chase: the surface number lands close to ISRO's, but the coldest point sits deeper and warmer than their early plot showed.
+
+`ch3.langmuir()` follows the RAMBHA-LP user manual's method. Treat it as a first pass, not a finished analysis. Over the whole mission (6,533 sweeps, 85 s), the daily median electron temperature is 5,300–7,500 K from 26 Aug on, inside the published 3,000–8,000 K ([Manju et al. 2025, MNRAS](https://doi.org/10.1093/mnras/staf1276)). The daily median density is 3.8–9.7×10⁸ m⁻³, against their 3.8–6×10⁸, so it runs up to ~1.6× high. Likely causes: the fit windows, and ISRO's per-day shift of the zero crossing, which this code doesn't apply. 24–25 Aug (just after probe deployment) give 11,000–18,000 K and need a closer look. Channel 1 at 20 MΩ is excluded: it disagrees with the other four settings by ~4×.
 
 The day picker places each day at the Sun's height from a fit to the LIBS operations table (local noon 28 Aug 2023 12:58 UTC, peak 19.4°, accurate to about 0.05°).
 
 ## Known archive issues
 
-Found while building the readers. Worth reporting to ISSDC (issdc@istrac.gov.in).
+I ran into these while writing the readers. None of them is a big deal on its own, but each one cost an evening, so they're listed here to save the next person the trouble. They're worth reporting to ISSDC (issdc@istrac.gov.in).
 
 - **ChaSTE `ch3_cht_cal_20230828T11`**: rows aren't padded to the fixed width the label declares, and the file has 3,248 records against the label's 3,337. `ch3.chaste()` reads it as plain CSV and warns.
 - **ChaSTE calibration**: `ch3_cht_res_temp_cal_coe.xml` points to `ch3_cht_res_temp_cal_coe.csv`, but the file shipped as `ch3_cht_temp_cal_coe.csv`.
